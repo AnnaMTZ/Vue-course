@@ -1,3 +1,5 @@
+link to the course - https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/practice/1224496/instructor-solution#questions/12629264
+
 # vue-project
 
 ## Project setup
