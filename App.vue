@@ -1,32 +1,31 @@
 <template>
-  <div>
-    <the-header></the-header>
-    <badge-list></badge-list>
-    <user-info
-      :full-name="activeUser.name"
-      :info-text="activeUser.description"
-      :role="activeUser.role"
-    ></user-info>
-  </div>
+<div>
+  <the-header title="RememberMe"></the-header>
+  <the-resources></the-resources>
+ </div> 
 </template>
 
 <script>
+import TheHeader from './components/layouts/TheHeader.vue';
+import TheResources from './components/learning-resources/TheResources.vue';
+
 export default {
-  data() {
-    return {
-      activeUser: {
-        name: 'Maximilian Schwarzmüller',
-        description: 'Site owner and admin',
-        role: 'admin',
-      },
-    };
-  },
+  components: {
+    TheHeader,
+    TheResources
+  }
 };
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {

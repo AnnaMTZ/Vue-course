@@ -1,26 +1,14 @@
-// import { createApp } from 'vue';
-
-import App from './App.vue';
-
 import Vue from 'vue'
+import App from './App.vue'
 
+import BaseCard from '@/components/UI/BaseCard'
+import BaseButton from '@/components/UI/BaseButton'
+import BaseDialog from '@/components/UI/BaseDialog'
 
-import TheHeader from '@/components/TheHeader.vue';
-import BaseBadge from '@/components/BaseBadge.vue';
-import BadgeList from '@/components/BadgeList.vue';
-import UserInfo from '@/components/UserInfo.vue';
-
-
-
-Vue.component('the-header', TheHeader);
-Vue.component('base-badge', BaseBadge);
-Vue.component('badge-list', BadgeList);
-Vue.component('user-info', UserInfo);
-
-// app.mount('#app');
+Vue.component('base-card', BaseCard);
+Vue.component('base-button', BaseButton);
+Vue.component('base-dialog', BaseDialog);
 
 new Vue({
-    render: h => h(App),
-  }).$mount('#app')
-  
-  
+  render: h => h(App),
+}).$mount('#app')
