@@ -1,14 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
 
-import BaseCard from '@/components/UI/BaseCard'
-import BaseButton from '@/components/UI/BaseButton'
-import BaseDialog from '@/components/UI/BaseDialog'
+import App from './App.vue';
 
-Vue.component('base-card', BaseCard);
-Vue.component('base-button', BaseButton);
-Vue.component('base-dialog', BaseDialog);
+import router from './router';
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const app = createApp(App)
+
+app.use(router);
+
+app.mount('#app');
+
