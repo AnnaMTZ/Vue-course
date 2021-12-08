@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 
 import App from './App.vue';
-import BaseModal from '@/components/BaseModal.vue';
+import store from './store/index.js';
 
-const app = createApp(App)
-app.component('base-modal', BaseModal);
+const app = createApp(App);
+
+app.use(store);
 
 app.mount('#app');
-
