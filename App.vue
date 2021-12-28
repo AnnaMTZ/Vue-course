@@ -1,16 +1,15 @@
 <template>
-  <the-header></the-header>
-
-  <!-- slotProps needs to be used with the router -->
-  <router-view v-slot="slotProps">
-    <!-- </transition> is used to add animations -->
-   <transition name="route" mode="out-in"> 
-     <!-- :is="slotProps.Component - will dynamically load the component set by yht router-->
-     <component :is="slotProps.Component"></component>
-   </transition>
-
-
-  </router-view>
+  <div>
+    <the-header></the-header>
+    <!-- slotProps needs to be used with the router -->
+    <router-view v-slot="slotProps">
+      <!-- </transition> is used to add animations -->
+    <transition name="route" mode="out-in"> 
+      <!-- :is="slotProps.Component - will dynamically load the component set by the router-->
+      <component :is="slotProps.Component"></component>
+    </transition>
+    </router-view>
+  </div>
 </template>
 
 <script>
@@ -19,7 +18,21 @@ import TheHeader from './components/layout/TheHeader.vue';
 export default {
   components: {
     TheHeader
-  }  
+  }, created() {
+    this.$store.dispatch('tryLogin');
+  }, 
+  computed: {
+    didAutoLogout() {
+      return this.$store.getters.didAutoLogout;
+    } 
+  },
+  watch: {
+    didAutoLogout(curValue, oldValue) {
+      if (curValue && curValue !== oldValue) {
+        this.$router.replace('/coaches');
+      }
+    }
+  }
 }
 </script>
 
